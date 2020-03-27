@@ -7,13 +7,13 @@ namespace Fungus.EditorUtils
 {
     public class SaveMenuItems 
     {
-        [MenuItem("Tools/Fungus/Create/Save Menu", false, 1100)]
+        [MenuItem("Tools/Fungus/Create/保存菜单", false, 1100)]
         static void CreateSaveMenu()
         {
             FlowchartMenuItems.SpawnPrefab("SaveMenu");
         }
 
-        [MenuItem("Tools/Fungus/Create/Save Data", false, 1101)]
+        [MenuItem("Tools/Fungus/Create/保存数据", false, 1101)]
         static void CreateSaveData()
         {
             FlowchartMenuItems.SpawnPrefab("SaveData");

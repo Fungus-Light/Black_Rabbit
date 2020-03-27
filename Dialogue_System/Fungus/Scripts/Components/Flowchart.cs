@@ -51,7 +51,7 @@ namespace Fungus
         [SerializeField] protected List<Variable> variables = new List<Variable>();
 
         [TextArea(3, 5)]
-        [Tooltip("Description text displayed in the Flowchart editor window")]
+        [Tooltip("在对话流编辑器里显示的描述")]
         [SerializeField] protected string description = "";
 
         [Range(0f, 5f)]

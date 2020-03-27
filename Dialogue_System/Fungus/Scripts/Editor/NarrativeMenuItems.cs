@@ -10,28 +10,28 @@ namespace Fungus.EditorUtils
     public class NarrativeMenuItems 
     {
 
-        [MenuItem("Tools/Fungus/Create/Character", false, 50)]
+        [MenuItem("Tools/Fungus/Create/角色", false, 50)]
         static void CreateCharacter()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("Character");
             go.transform.position = Vector3.zero;
         }
 
-        [MenuItem("Tools/Fungus/Create/Say Dialog", false, 51)]
+        [MenuItem("Tools/Fungus/Create/对话框", false, 51)]
         static void CreateSayDialog()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("SayDialog");
             go.transform.position = Vector3.zero;
         }
 
-        [MenuItem("Tools/Fungus/Create/Menu Dialog", false, 52)]
+        [MenuItem("Tools/Fungus/Create/选项组", false, 52)]
         static void CreateMenuDialog()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("MenuDialog");
             go.transform.position = Vector3.zero;
         }
 
-        [MenuItem("Tools/Fungus/Create/Tag", false, 53)]
+        [MenuItem("Tools/Fungus/Create/标签", false, 53)]
         static void CreateTag()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("Tag");
@@ -45,20 +45,20 @@ namespace Fungus.EditorUtils
             go.transform.position = Vector3.zero;
         }
 
-        [MenuItem("Tools/Fungus/Create/Stage", false, 55)]
+        [MenuItem("Tools/Fungus/Create/舞台", false, 55)]
         static void CreateStage()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("Stage");
             go.transform.position = Vector3.zero;
         }
         
-        [MenuItem("Tools/Fungus/Create/Stage Position", false, 56)]
+        [MenuItem("Tools/Fungus/Create/舞台位置", false, 56)]
         static void CreateStagePosition()
         {
             FlowchartMenuItems.SpawnPrefab("StagePosition");
         }
 
-        [MenuItem("Tools/Fungus/Create/Localization", false, 57)]
+        [MenuItem("Tools/Fungus/Create/本地化物体", false, 57)]
         static void CreateLocalization()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("Localization");

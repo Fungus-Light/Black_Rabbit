@@ -1,14 +1,14 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
-// It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
+// Fungus-Light修改和编写
 
 ﻿using UnityEngine;
 using UnityEditor;
+using Black_Rabbit;
 
 namespace Fungus.EditorUtils
 {
     public class FlowchartMenuItems
     {
-        [MenuItem("Tools/Fungus/Create/Flowchart", false, 0)]
+        [MenuItem("Tools/Fungus/Create/对话流", false, 0)]
         static void CreateFlowchart()
         {
             GameObject go = SpawnPrefab("Flowchart");
@@ -30,22 +30,23 @@ namespace Fungus.EditorUtils
             }
         }
 
-        [MenuItem("Tools/Fungus/Create/Fungus Logo", false, 1000)]
-        static void CreateFungusLogo()
-        {
-            SpawnPrefab("FungusLogo");
-        }
+        //[MenuItem("Tools/Fungus/Create/Fungus Logo", false, 1000)]
+        //static void CreateFungusLogo()
+        //{
+        //    SpawnPrefab("FungusLogo");
+        //}
 
-        [MenuItem("Tools/Fungus/Utilities/Export Fungus Package")]
+        [MenuItem("Tools/Fungus/Utilities/导出Black_Rabbit包")]
         static void ExportFungusPackage()
         {
-            string path = EditorUtility.SaveFilePanel("Export Fungus Package", "", "Fungus", "unitypackage");           
+            string filename = "Black_Rabbit"+Config.version;
+            string path = EditorUtility.SaveFilePanel("导出Black_Rabbit", "",filename , "unitypackage");           
             if(path.Length == 0) 
             {
                 return;
             }
 
-            string[] folders = new string[] {"Assets/Fungus", "Assets/FungusExamples" };
+            string[] folders = new string[] { "Assets/Black_Rabbit" };
 
             AssetDatabase.ExportPackage(folders, path, ExportPackageOptions.Recurse);
         }

@@ -7,7 +7,7 @@ namespace Black_Rabbit
 	public class ThirdPersonCamera : MonoBehaviour
 	{
 		public float mouseSensitivity = 6;
-		public Transform target;
+		public CameraTarget target;
 		public float dstFromTarget = 4;
 		public Vector2 pitchMinMax = new Vector2(-40, 85);
 
@@ -20,6 +20,10 @@ namespace Black_Rabbit
 
 		void Start()
 		{
+			if (target==null)
+			{
+				target = FindObjectOfType<CameraTarget>();
+			}
 			
 		}
 
@@ -33,7 +37,7 @@ namespace Black_Rabbit
 			currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
 			transform.eulerAngles = currentRotation;
 
-			transform.position = target.position - transform.forward * dstFromTarget;
+			transform.position = target.transform.position - transform.forward * dstFromTarget;
 
 		}
 

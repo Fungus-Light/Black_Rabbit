@@ -474,16 +474,16 @@ namespace Fungus.EditorUtils
             return result;
         }
 
-        [MenuItem("Tools/Fungus/Utilities/Export Reference Docs")]
-        protected static void ExportReferenceDocs()
-        {
-            const string path = "./Docs";
+        //[MenuItem("Tools/Fungus/Utilities/Export Reference Docs")]
+        //protected static void ExportReferenceDocs()
+        //{
+        //    const string path = "./Docs";
 
-            ExportCommandInfo(path);
-            ExportEventHandlerInfo(path);
+        //    ExportCommandInfo(path);
+        //    ExportEventHandlerInfo(path);
 
-            FlowchartWindow.ShowNotification("Exported Reference Documentation");
-        }
+        //    FlowchartWindow.ShowNotification("Exported Reference Documentation");
+        //}
 
         public static List<KeyValuePair<System.Type, CommandInfoAttribute>> GetFilteredCommandInfoAttribute(List<System.Type> menuTypes)
         {

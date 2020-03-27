@@ -8,8 +8,6 @@ namespace Fungus.EditorUtils
 {
     /// <summary>
     /// Common base for PopupWindowContent that is a search filterable list a la AddComponent
-    /// 
-    /// Inspired by https://github.com/roboryantron/UnityEditorJunkie/blob/master/Assets/SearchableEnum/Code/Editor/SearchablePopup.cs
     /// </summary>
     public abstract class BasePopupWindowContent : PopupWindowContent
     {
