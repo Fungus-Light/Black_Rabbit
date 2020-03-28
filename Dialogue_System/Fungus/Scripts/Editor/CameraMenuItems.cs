@@ -8,7 +8,7 @@ namespace Fungus.EditorUtils
 {
     public class CameraMenuItems 
     {
-        [MenuItem("Tools/Fungus/Create/摄像机视图", false, 100)]
+        [MenuItem("Tools/Fungus/创建/摄像机视图", false, 100)]
         static void CreateView()
         {
             FlowchartMenuItems.SpawnPrefab("View");

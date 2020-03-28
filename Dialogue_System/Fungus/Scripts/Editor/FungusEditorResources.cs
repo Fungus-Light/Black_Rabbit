@@ -25,7 +25,7 @@ namespace Fungus.EditorUtils
             }
             else
             {
-                if (GUILayout.Button("Sync with EditorResources folder"))
+                if (GUILayout.Button("和EditorResources文件夹同步"))
                 {
                     FungusEditorResources.GenerateResourcesScript();
                 }
@@ -143,8 +143,7 @@ namespace Fungus.EditorUtils
             
             using (var writer = new StreamWriter(absolutePath))
             {
-                writer.WriteLine("// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).");
-                writer.WriteLine("// It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)");
+                writer.WriteLine("// 代码由Fungus-Light 修改和编写");
                 writer.WriteLine("");				
                 writer.WriteLine("#pragma warning disable 0649");
                 writer.WriteLine("");

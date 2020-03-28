@@ -37,7 +37,7 @@ namespace Fungus.EditorUtils
             EditorGUILayout.PropertyField(nameTextProp, new GUIContent("名字", "显示在对话框上的名字"));
             EditorGUILayout.PropertyField(nameColorProp, new GUIContent("名字颜色", "对话框上名字颜色"));
             EditorGUILayout.PropertyField(soundEffectProp, new GUIContent("声音", "角色说话时默认声音 ，在对话中可以被覆盖"));
-            EditorGUILayout.PropertyField(setSayDialogProp);
+            EditorGUILayout.PropertyField(setSayDialogProp, new GUIContent("对话框", "角色说话时默认对话框，在对话中可以被覆盖"));
             EditorGUILayout.PropertyField(descriptionProp, new GUIContent("描述", "角色的描述备注等"));
 
             if (t.Portraits != null &&
@@ -61,7 +61,7 @@ namespace Fungus.EditorUtils
 
             EditorGUILayout.PropertyField(portraitsProp, new GUIContent("立绘", "对话时显示的立绘"), true);
 
-            EditorGUILayout.HelpBox("All portrait images should use the exact same resolution to avoid positioning and tiling issues.", MessageType.Info);
+            EditorGUILayout.HelpBox("所有立绘都应该使用相同分辨率", MessageType.Info);
 
             EditorGUILayout.Separator();
 
@@ -71,7 +71,7 @@ namespace Fungus.EditorUtils
                 "<--",
                 "-->",
             };
-            portraitsFaceProp.enumValueIndex = EditorGUILayout.Popup("Portraits Face", (int)portraitsFaceProp.enumValueIndex, facingArrows);
+            portraitsFaceProp.enumValueIndex = EditorGUILayout.Popup("立绘朝向", (int)portraitsFaceProp.enumValueIndex, facingArrows);
 
             EditorGUILayout.Separator();
 

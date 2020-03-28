@@ -1,5 +1,3 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
-// It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
 using UnityEngine;
 using UnityEditor;
@@ -234,7 +232,7 @@ namespace Fungus.EditorUtils
             }
         }
 
-        [MenuItem("Tools/Fungus/Flowchart Window")]
+        [MenuItem("Tools/Fungus/对话编辑器")]
         static void Init()
         {
             GetWindow(typeof(FlowchartWindow), false, "Flowchart");
@@ -250,7 +248,7 @@ namespace Fungus.EditorUtils
             nodeStyle.wordWrap = true;
 
             addTexture = FungusEditorResources.AddSmall;
-            addButtonContent = new GUIContent(addTexture, "Add a new block");
+            addButtonContent = new GUIContent(addTexture, "添加新对话块");
             connectionPointTexture = FungusEditorResources.ConnectionPoint;
             gridLineColor.a = EditorGUIUtility.isProSkin ? 0.5f : 0.25f;
 
@@ -614,7 +612,7 @@ namespace Fungus.EditorUtils
 
             if (flowchart == null)
             {
-                GUILayout.Label("No Flowchart scene object selected");
+                GUILayout.Label("未选中场景中对话流物体");
                 return;
             }
 

@@ -7,25 +7,25 @@ namespace Fungus.EditorUtils
 {
     public class SpriteMenuItems 
     {
-        [MenuItem("Tools/Fungus/Create/可点击图片", false, 150)]
+        [MenuItem("Tools/Fungus/创建/可点击图片", false, 150)]
         static void CreateClickableSprite()
         {
             FlowchartMenuItems.SpawnPrefab("ClickableSprite");
         }
 
-        [MenuItem("Tools/Fungus/Create/可拖动图片", false, 151)]
+        [MenuItem("Tools/Fungus/创建/可拖动图片", false, 151)]
         static void CreateDraggableSprite()
         {
             FlowchartMenuItems.SpawnPrefab("DraggableSprite");
         }
 
-        [MenuItem("Tools/Fungus/Create/拖放目标图片", false, 152)]
+        [MenuItem("Tools/Fungus/创建/拖放目标图片", false, 152)]
         static void CreateDragTargetSprite()
         {
             FlowchartMenuItems.SpawnPrefab("DragTargetSprite");
         }
 
-        [MenuItem("Tools/Fungus/Create/Parallax Sprite", false, 152)]
+        [MenuItem("Tools/Fungus/创建/Parallax Sprite", false, 152)]
         static void CreateParallaxSprite()
         {
             FlowchartMenuItems.SpawnPrefab("ParallaxSprite");
