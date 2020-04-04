@@ -13,6 +13,7 @@ namespace Black_Rabbit
         public string name_str = "name", message_str = "message";
         public bool isShow;
         private Transform _trigger;
+        public bool isCostumedPos = true;
 
         void Start()
         {
@@ -42,7 +43,10 @@ namespace Black_Rabbit
             if (isShow && _trigger.gameObject.activeInHierarchy == true && _trigger != null && _trigger.parent.GetComponent<Trigger_basic>().isTalking == false)
             {
                 this.GetComponent<CanvasGroup>().alpha = 1;
-                this.transform.position = Camera.main.WorldToScreenPoint(_trigger.transform.position);
+                if (isCostumedPos==true)
+                {
+                    this.transform.position = Camera.main.WorldToScreenPoint(_trigger.transform.position);
+                }
             }
             else
             {

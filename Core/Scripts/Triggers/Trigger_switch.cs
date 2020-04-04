@@ -10,24 +10,41 @@ namespace Black_Rabbit
     {
         public bool CanRevert=true;
         private bool IsSwitched = false;
+        public KeyCode key = KeyCode.E;
+        public bool activeAuto=false;
 
         private void Update()
         {
-            if (isUseful && Input.GetKeyUp(KeyCode.E))
+            if (isUseful )
             {
-                if (IsSwitched)
+                if (activeAuto==true)
+                {
+                    ActiveSwitch();
+                }
+                else if(Input.GetKeyUp(key))
+                {
+                    ActiveSwitch();
+                }
+            }
+        }
+
+        public void ActiveSwitch()
+        {
+            if (IsSwitched)
+            {
+                if (CanRevert)
                 {
                     GetComponent<simple_switch>().Revert_it();
                     IsSwitched = false;
                 }
-                else
-                {
-                    GetComponent<simple_switch>().Do_switch();
-                    IsSwitched = true;
-                }
-                
+            }
+            else
+            {
+                GetComponent<simple_switch>().Do_switch();
+                IsSwitched = true;
             }
         }
+
     }
 }
 

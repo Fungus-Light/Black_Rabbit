@@ -9,6 +9,9 @@ namespace Black_Rabbit
         [Tooltip("有播放次数限制的timeline")]
         public PlayableDirector PD;
         public int useTimes = 1;
+        public KeyCode key = KeyCode.E;
+        public bool isUnlimited = false;
+        public bool activeAuto = false;
 
         // Update is called once per frame
         void Update()
@@ -19,17 +22,39 @@ namespace Black_Rabbit
                 isShow = false;
             }
 
-            if (isUseful && Input.GetKeyUp(KeyCode.E))
+            if (isUseful)
             {
-                if (useTimes > 0)
+                if (activeAuto)
                 {
-                    PD.Play();
-                    useTimes--;
-                    UI.HideMessage();
+                    PlayTimeLine();
                 }
+                else
+                {
+                    if (Input.GetKeyUp(key))
+                    {
+                        PlayTimeLine();
+                    }
+                }
+
+                
 
             }
         }
+
+        public void PlayTimeLine()
+        {
+            if (useTimes > 0)
+            {
+                PD.Play();
+                if (isUnlimited == false)
+                {
+                    useTimes--;
+                }
+                UI.HideMessage();
+                isUseful = false;
+            }
+        }
+
     }
 }
 

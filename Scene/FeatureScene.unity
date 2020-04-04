@@ -644,6 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6968168a76227054392f7bb3ab04cb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameType: 0
   messagePos: {fileID: 0}
   PosName: Message_Pos
   _Name: "\u52A0\u8F7D\u5C4F\u6F14\u793A"
@@ -651,9 +652,12 @@ MonoBehaviour:
   UI: {fileID: 0}
   isUseful: 0
   isTalking: 0
+  isShow: 1
   control: {fileID: 0}
   _message: doit
   blockName: flow
+  key: 101
+  activeAuto: 0
 --- !u!65 &367243620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2922,6 +2926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6968168a76227054392f7bb3ab04cb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameType: 0
   messagePos: {fileID: 0}
   PosName: Message_Pos
   _Name: "\u5BF9\u8BDD\u89E6\u53D1\u5668"
@@ -2929,9 +2934,12 @@ MonoBehaviour:
   UI: {fileID: 0}
   isUseful: 0
   isTalking: 0
+  isShow: 1
   control: {fileID: 0}
   _message: doit
   blockName: flow
+  key: 101
+  activeAuto: 0
 --- !u!65 &2102607892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3129,6 +3137,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 939099239977882855, guid: 97e2928130cdde04c9d5f2f34cd99de6,
+        type: 3}
+      propertyPath: isShow
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97e2928130cdde04c9d5f2f34cd99de6, type: 3}
 --- !u!1001 &2414868624859499985
@@ -3272,6 +3285,21 @@ PrefabInstance:
       propertyPath: PD
       value: 
       objectReference: {fileID: 2129884995}
+    - target: {fileID: 2969361308616018305, guid: fa2bd6d146c58914ebeafcd7f0654af1,
+        type: 3}
+      propertyPath: isShow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969361308616018305, guid: fa2bd6d146c58914ebeafcd7f0654af1,
+        type: 3}
+      propertyPath: activeAuto
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969361308616018305, guid: fa2bd6d146c58914ebeafcd7f0654af1,
+        type: 3}
+      propertyPath: isUnlimited
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2969361308616018306, guid: fa2bd6d146c58914ebeafcd7f0654af1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3430,6 +3458,21 @@ PrefabInstance:
       propertyPath: to_close.Array.data[0]
       value: 
       objectReference: {fileID: 593309973}
+    - target: {fileID: 5447368484669728725, guid: 22d4ee43cd668d94184f7d1fa9050bc8,
+        type: 3}
+      propertyPath: isShow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447368484669728725, guid: 22d4ee43cd668d94184f7d1fa9050bc8,
+        type: 3}
+      propertyPath: CanRevert
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447368484669728725, guid: 22d4ee43cd668d94184f7d1fa9050bc8,
+        type: 3}
+      propertyPath: activeAuto
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5447368484669728726, guid: 22d4ee43cd668d94184f7d1fa9050bc8,
         type: 3}
       propertyPath: m_LocalPosition.x

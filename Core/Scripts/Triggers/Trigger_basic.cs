@@ -5,6 +5,11 @@ using UnityEditor;
 
 namespace Black_Rabbit
 {
+
+    public enum GameType{
+        TPS,FPS
+    };
+
     [AddComponentMenu("Black-Rabbit/Trigger/Basic")]
     [RequireComponent(typeof(BoxCollider))]
     public class Trigger_basic : MonoBehaviour
@@ -13,6 +18,8 @@ namespace Black_Rabbit
         {
             this.GetComponent<BoxCollider>().isTrigger = true;
         }
+
+        public GameType gameType = GameType.TPS;
 
         public Transform messagePos;
         public string PosName = "Message_Pos";
@@ -23,7 +30,7 @@ namespace Black_Rabbit
         public bool isUseful;
         public bool isTalking = false;
 
-        protected bool isShow = true;
+        public bool isShow = true;
         // Start is called before the first frame update
         public virtual void Start()
         {
@@ -34,22 +41,42 @@ namespace Black_Rabbit
         }
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player" && isShow)
+            if (gameType==GameType.TPS)
             {
-                UI.ShowMessage(_Name, _Message, messagePos);
-                isUseful = true;
+                if (other.tag == "Player")
+                {
+                    if (isShow)
+                    {
+                        UI.ShowMessage(_Name, _Message, messagePos);
+                    }
+                    isUseful = true;
+                }
             }
+            
         }
 
         protected void OnTriggerExit(Collider other)
         {
-            if (other.tag == "Player")
+            if (gameType == GameType.TPS)
             {
-                UI.HideMessage();
-                isUseful = false;
+                if (other.tag == "Player")
+                {
+                    UI.HideMessage();
+                    isUseful = false;
+                }
             }
         }
 
+
+        public void MakeUseful()
+        {
+            isUseful = true;
+        }
+
+        public void MakeUseless()
+        {
+            isUseful = false;
+        }
     }
 }
 

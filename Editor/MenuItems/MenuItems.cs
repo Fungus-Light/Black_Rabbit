@@ -14,13 +14,13 @@ namespace Black_Rabbit
         }
 
         [MenuItem("Tools/Black_Rabbit/创建/触发器/基本触发器", false, 100)]
-        static void CreateTriggerBasic()
+        private static void CreateTriggerBasic()
         {
             CreateGameObject.SpawnPrefab("Triggers/Trigger_basic");
         }
 
         [MenuItem("Tools/Black_Rabbit/创建/触发器/开关触发器", false, 100)]
-        static void CreateTriggerSwitch()
+        private static void CreateTriggerSwitch()
         {
             CreateGameObject.SpawnPrefab("Triggers/Trigger_active");
         }

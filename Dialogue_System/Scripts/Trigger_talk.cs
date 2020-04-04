@@ -11,6 +11,8 @@ namespace Black_Rabbit
         public Flowchart control;
         public string _message = "doit";
         public string blockName = "flow";
+        public KeyCode key = KeyCode.E;
+        public bool activeAuto=false;
 
         override public void Start()
         {
@@ -38,12 +40,28 @@ namespace Black_Rabbit
 
 
 
-            if (isUseful && Input.GetKeyUp(KeyCode.E))
+            if (isUseful)
             {
-                if (control != null)
+                if (activeAuto==true)
                 {
-                    control.SendFungusMessage(_message);
+                    ActiveFlowchart();
                 }
+                else
+                {
+                    if (Input.GetKeyUp(key))
+                    {
+                        ActiveFlowchart();
+                    }
+                }
+            }
+        }
+
+        public void ActiveFlowchart()
+        {
+            if (control != null)
+            {
+                control.SendFungusMessage(_message);
+                isUseful = false;
             }
         }
     }
