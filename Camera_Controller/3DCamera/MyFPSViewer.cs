@@ -17,7 +17,7 @@ namespace Black_Rabbit
             //初始化摄像机
             fpsCam = GetComponentInParent<Camera>();
             ui = FindObjectOfType<MessageBar>();
-            ui.gameObject.SetActive(false);
+            ui.HideMessage();
         }
 
 
@@ -39,7 +39,6 @@ namespace Black_Rabbit
                 if (item != null)
                 {
 
-                    ui.gameObject.SetActive(true);
                     if (item.isShow)
                     {
                         ui.ShowMessage(item._Name, item._Message, item.messagePos.transform);
@@ -58,14 +57,13 @@ namespace Black_Rabbit
                 else
                 {
                     ui.HideMessage();
-                    ui.gameObject.SetActive(false);
 
                     CLearPrev();
                 }
             }
             else
             {
-                ui.gameObject.SetActive(false);
+                ui.HideMessage();
             }
 
         }
