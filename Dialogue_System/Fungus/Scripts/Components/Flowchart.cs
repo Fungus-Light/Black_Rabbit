@@ -55,13 +55,13 @@ namespace Fungus
         [SerializeField] protected string description = "";
 
         [Range(0f, 5f)]
-        [Tooltip("Adds a pause after each execution step to make it easier to visualise program flow. Editor only, has no effect in platform builds.")]
+        [Tooltip("在每一步后面加上停顿时间，便于调试，仅仅在编辑模式有效，但是打包后无效")]
         [SerializeField] protected float stepPause = 0f;
 
-        [Tooltip("Use command color when displaying the command list in the Fungus Editor window")]
+        [Tooltip("在编辑页面给指令着色")]
         [SerializeField] protected bool colorCommands = true;
 
-        [Tooltip("Hides the Flowchart block and command components in the inspector. Deselect to inspect the block and command components that make up the Flowchart.")]
+        [Tooltip("是否隐藏Block和Command脚本，这些脚本构成了整个对话流")]
         [SerializeField] protected bool hideComponents = true;
 
         [Tooltip("Saves the selected block and commands when saving the scene. Helps avoid version control conflicts if you've only changed the active selection.")]
