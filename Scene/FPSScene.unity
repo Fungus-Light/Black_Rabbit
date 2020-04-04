@@ -178,7 +178,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &141927190
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -205,7 +205,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &141927191
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -219,7 +219,7 @@ MonoBehaviour:
   message: doit
 --- !u!114 &141927192
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -275,7 +275,7 @@ MonoBehaviour:
   description: 
   stepPause: 0
   colorCommands: 1
-  hideComponents: 1
+  hideComponents: 0
   saveSelection: 1
   localizationId: 
   showLineNumbers: 0
