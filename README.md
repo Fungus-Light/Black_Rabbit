@@ -7,6 +7,10 @@
 
 **注意：本框架运行在Unity 2018.4 以上版本**
 
+**从0.0.3版本起，Black_Rabbit移除了对Lua的支持，至此，可以看作完全与fungus割裂开**
+
+**如果需要使用Lua，可以考虑使用0.0.2及之前版本**
+
 ---
 
 如果Github访问较慢，可以使用国内码云镜像：[gitee](https://gitee.com/fungus-light/Black_Rabbit)

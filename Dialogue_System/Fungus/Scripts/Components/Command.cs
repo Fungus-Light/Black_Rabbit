@@ -116,7 +116,7 @@ namespace Fungus
         public virtual Block ParentBlock { get; set; }
 
         /// <summary>
-        /// Returns the Flowchart that this command belongs to.
+        /// 返回这个指令属于的FlowChart
         /// </summary>
         public virtual Flowchart GetFlowchart()
         {

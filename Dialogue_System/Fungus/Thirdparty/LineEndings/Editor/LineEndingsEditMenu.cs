@@ -51,7 +51,7 @@ namespace TiaanDotCom.Unity3D.EditorTools
 //            ConvertLineEndings(false);
 //        }
 
-        [MenuItem("Tools/Fungus/Utilities/Convert to Mac Line Endings")]
+        [MenuItem("Tools/Fungus/小功能/转换到Mac的行尾格式")]
         public static void ConvertLineEndingsToMacFormat()
         {
             ConvertLineEndings(true);
@@ -60,18 +60,17 @@ namespace TiaanDotCom.Unity3D.EditorTools
         private static void ConvertLineEndings(bool isUnixFormat)
         {
             string title = string.Format(
-                "EOL Conversion to {0} Format",
+                "转换到 {0} 格式",
                 (isUnixFormat ? "UNIX" : "Windows"));
             if (!EditorUtility.DisplayDialog(
                 title,
-                "This operation may potentially modify " +
-                "many files in the current project! " +
-                "Hopefully you have backups of everything. " +
-                "Are you sure you want to proceed?",
+                "这个操作可能改变你项目中许多文件，" +
+                "希望你做好备份！！ " +
+                "要继续吗？",
                 "Yes",
                 "No"))
             {
-                Debug.Log("EOL Conversion was not attempted.");
+                Debug.Log("操作取消");
                 return;
             }
 
@@ -134,8 +133,8 @@ namespace TiaanDotCom.Unity3D.EditorTools
             int changedFileCount = changedFiles.Count;
             int skippedFileCount = (totalFileCount - changedFileCount);
             string message = string.Format(
-                "EOL Conversion skipped {0} " +
-                "files and changed {1} files",
+                "跳过 {0} 个文件 " +
+                "修改了 {1} 文件",
                 skippedFileCount,
                 changedFileCount);
             if (changedFileCount <= 0)

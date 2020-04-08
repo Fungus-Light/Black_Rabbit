@@ -1,5 +1,4 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
-// It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
+//Fungus-Light�޸ĺͱ�д
 
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -76,11 +75,9 @@ namespace Fungus
         [Tooltip("List of commands to hide in the Add Command menu. Use this to restrict the set of commands available when editing a Flowchart.")]
         [SerializeField] protected List<string> hideCommands = new List<string>();
 
-        [Tooltip("Lua Environment to be used by default for all Execute Lua commands in this Flowchart")]
-        [SerializeField] protected LuaEnvironment luaEnvironment;
+        
 
-        [Tooltip("The ExecuteLua command adds a global Lua variable with this name bound to the flowchart prior to executing.")]
-        [SerializeField] protected string luaBindingName = "flowchart";
+        
 
         protected static List<Flowchart> cachedFlowcharts = new List<Flowchart>();
 
@@ -408,15 +405,8 @@ namespace Fungus
         /// </summary>
         public virtual bool ShowLineNumbers { get { return showLineNumbers; } }
 
-        /// <summary>
-        /// Lua Environment to be used by default for all Execute Lua commands in this Flowchart.
-        /// </summary>
-        public virtual LuaEnvironment LuaEnv { get { return luaEnvironment; } }
-
-        /// <summary>
-        /// The ExecuteLua command adds a global Lua variable with this name bound to the flowchart prior to executing.
-        /// </summary>
-        public virtual string LuaBindingName { get { return luaBindingName; } }
+       
+       
 
         /// <summary>
         /// Position in the center of all blocks in the flowchart.
@@ -1349,7 +1339,6 @@ namespace Fungus
         /// To perform full variable substitution with all substitution handlers in the scene, you should
         /// use the SubstituteVariables() method instead.
         /// </summary>
-        [MoonSharp.Interpreter.MoonSharpHidden]
         public virtual bool SubstituteStrings(StringBuilder input)
         {
             // Instantiate the regular expression object.

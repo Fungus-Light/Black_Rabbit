@@ -5,7 +5,6 @@
 using UnityEngine.UI;
 using System;
 using System.Collections;
-using MoonSharp.Interpreter;
 
 namespace Fungus
 {
@@ -408,17 +407,7 @@ namespace Fungus
             Show(options);
         }
 
-        /// <summary>
-        /// From lua, you can pass an options table with named arguments
-        /// example:
-        ///     stage.show{character=jill, portrait="happy", fromPosition="right", toPosition="left"}
-        /// Any option available in the PortraitOptions is available from Lua
-        /// </summary>
-        /// <param name="optionsTable">Moonsharp Table</param>
-        public virtual void Show(Table optionsTable)
-        {
-            Show(PortraitUtil.ConvertTableToPortraitOptions(optionsTable, stage));
-        }
+        
 
         /// <summary>
         /// Show portrait with the supplied portrait options
@@ -548,17 +537,7 @@ namespace Fungus
             Hide(options);
         }
 
-        /// <summary>
-        /// From lua, you can pass an options table with named arguments
-        /// example:
-        ///     stage.hide{character=jill, toPosition="left"}
-        /// Any option available in the PortraitOptions is available from Lua
-        /// </summary>
-        /// <param name="optionsTable">Moonsharp Table</param>
-        public virtual void Hide(Table optionsTable)
-        {
-            Hide(PortraitUtil.ConvertTableToPortraitOptions(optionsTable, stage));
-        }
+        
 
         /// <summary>
         /// Hide portrait with provided options

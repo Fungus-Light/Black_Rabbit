@@ -63,10 +63,10 @@ public class SfxrGenerator : EditorWindow {
 	// ================================================================================================================
 	// PUBLIC INTERFACE -----------------------------------------------------------------------------------------------
 
-	[MenuItem("Tools/Fungus/Utilities/Generate usfxr Sound Effects")]
+	[MenuItem("Tools/Fungus/小功能/音效合成器")]
 	public static void Initialize() {
 		var window = ScriptableObject.CreateInstance<SfxrGenerator>();
-		window.name = "Sound Effects";
+		window.name = "音效合成器";
 
 #if UNITY_5_0
 		window.title = window.name;
@@ -140,10 +140,10 @@ public class SfxrGenerator : EditorWindow {
 
 		// Begin generator column
 		GUILayout.BeginVertical("box", GUILayout.Width(110));
-		GUILayout.Label("GENERATOR", EditorStyles.boldLabel);
+		GUILayout.Label("合成器", EditorStyles.boldLabel);
 		GUILayout.Space(8);
 
-		if (GUILayout.Button("PICKUP/COIN")) {
+		if (GUILayout.Button("捡拾/金币")) {
 			suggestedName = "PickupCoin";
 			parameters.GeneratePickupCoin();
 			soundChanged = true;

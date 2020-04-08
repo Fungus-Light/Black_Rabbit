@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Fungus
 {
     /// <summary>
-    /// Save an Boolean, Integer, Float or String variable to persistent storage using a string key.
+    /// 保存一个Boolean, Integer, Float or String 使用本地化持久化存储.
     /// The value can be loaded again later using the Load Variable command. You can also 
     /// use the Set Save Profile command to manage separate save profiles for multiple players.
     /// </summary>

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.EventSystems;
 using System.Linq;
-using MoonSharp.Interpreter;
 
 namespace Fungus
 {
@@ -160,14 +159,7 @@ namespace Fungus
             block.StartExecution();
         }
 
-        protected IEnumerator CallLuaClosure(LuaEnvironment luaEnv, Closure callback)
-        {
-            yield return new WaitForEndOfFrame();
-            if (callback != null)
-            {
-                luaEnv.RunLuaFunction(callback, true);
-            }
-        }
+        
 
         /// <summary>
         /// Clear all displayed options in the Menu Dialog.
@@ -259,24 +251,21 @@ namespace Fungus
         /// Will cause the Menu dialog to become visible if it is not already visible.
         /// </summary>
         /// <returns><c>true</c>, if the option was added successfully.</returns>
-        public virtual bool AddOption(string text, bool interactable, LuaEnvironment luaEnv, Closure callBack)
+        public virtual bool AddOption(string text, bool interactable)
         {
             if (!gameObject.activeSelf)
             {
                 gameObject.SetActive(true);
             }
 
-            // Copy to local variables 
-            LuaEnvironment env = luaEnv;
-            Closure call = callBack;
+            
             UnityEngine.Events.UnityAction action = delegate
             {
                 StopAllCoroutines();
                 // Stop timeout
                 Clear();
                 HideSayDialog();
-                // Use a coroutine to call the callback on the next frame
-                StartCoroutine(CallLuaClosure(env, call));
+                
             };
 
             return AddOption(text, interactable, false, action);
@@ -349,7 +338,7 @@ namespace Fungus
         /// <summary>
         /// Show a timer during which the player can select an option. Calls a Lua function when the timer expires.
         /// </summary>
-        public virtual IEnumerator ShowTimer(float duration, LuaEnvironment luaEnv, Closure callBack)
+        public virtual IEnumerator ShowTimer(float duration)
         {
             if (CachedSlider == null ||
                 duration <= 0f)
@@ -380,10 +369,7 @@ namespace Fungus
             gameObject.SetActive(false);
             HideSayDialog();
 
-            if (callBack != null)
-            {
-                luaEnv.RunLuaFunction(callBack, true);
-            }
+            
         }
 
         /// <summary>
