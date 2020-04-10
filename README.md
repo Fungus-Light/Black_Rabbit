@@ -21,6 +21,8 @@
 
 见[文档](./Docs/doc.md)
 
+和fungus差异见[差异](./Docs/differ.md)
+
 - **安装**
 
 在Unity 2018.4版本以上新建3D项目，

@@ -1,5 +1,4 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
-// It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
+// fungus-light修改和编写
 
 using UnityEngine;
 
@@ -7,25 +6,22 @@ namespace Fungus
 {
     /// <summary>
     /// 保存一个Boolean, Integer, Float or String 使用本地化持久化存储.
-    /// The value can be loaded again later using the Load Variable command. You can also 
-    /// use the Set Save Profile command to manage separate save profiles for multiple players.
     /// </summary>
-    [CommandInfo("Variable", 
-                 "Save Variable", 
-                 "Save an Boolean, Integer, Float or String variable to persistent storage using a string key. " +
-                 "The value can be loaded again later using the Load Variable command. You can also " +
-                 "use the Set Save Profile command to manage separate save profiles for multiple players.")]
+    [CommandInfo("存档系统", 
+                 "保存变量", 
+                 "保存一个支持的类型的变量")]
     [AddComponentMenu("")]
     public class SaveVariable : Command
     {
-        [Tooltip("Name of the saved value. Supports variable substition e.g. \"player_{$PlayerNumber}")]
+        [Tooltip("保存的键值")]
         [SerializeField] protected string key = "";
         
-        [Tooltip("Variable to read the value from. Only Boolean, Integer, Float and String are supported.")]
+        [Tooltip("变量选择，仅支持Bool，Int,Float,String")]
         [VariableProperty(typeof(BooleanVariable),
                           typeof(IntegerVariable), 
                           typeof(FloatVariable), 
-                          typeof(StringVariable))]
+                          typeof(StringVariable),
+                          typeof(Vector2Variable))]
         [SerializeField] protected Variable variable;
 
         #region Public members
@@ -41,7 +37,6 @@ namespace Fungus
             
             var flowchart = GetFlowchart();
             
-            // Prepend the current save profile (if any)
             string prefsKey = SetSaveProfile.SaveProfile + "_" + flowchart.SubstituteVariables(key);
             
             System.Type variableType = variable.GetType();
@@ -51,8 +46,8 @@ namespace Fungus
                 BooleanVariable booleanVariable = variable as BooleanVariable;
                 if (booleanVariable != null)
                 {
-                    // PlayerPrefs does not have bool accessors, so just use int
-                    PlayerPrefs.SetInt(prefsKey, booleanVariable.Value ? 1 : 0);
+                    //PlayerPrefs.SetInt(prefsKey, booleanVariable.Value ? 1 : 0);
+                    SaveSystem.SetBool(prefsKey,booleanVariable.Value);
                 }
             }
             else if (variableType == typeof(IntegerVariable))
@@ -60,7 +55,8 @@ namespace Fungus
                 IntegerVariable integerVariable = variable as IntegerVariable;
                 if (integerVariable != null)
                 {
-                    PlayerPrefs.SetInt(prefsKey, integerVariable.Value);
+                    //PlayerPrefs.SetInt(prefsKey, integerVariable.Value);
+                    SaveSystem.SetInt(prefsKey,integerVariable.Value);
                 }
             }
             else if (variableType == typeof(FloatVariable))
@@ -68,7 +64,8 @@ namespace Fungus
                 FloatVariable floatVariable = variable as FloatVariable;
                 if (floatVariable != null)
                 {
-                    PlayerPrefs.SetFloat(prefsKey, floatVariable.Value);
+                    //PlayerPrefs.SetFloat(prefsKey, floatVariable.Value);
+                    SaveSystem.SetFloat(prefsKey,floatVariable.Value);
                 }
             }
             else if (variableType == typeof(StringVariable))
@@ -76,10 +73,20 @@ namespace Fungus
                 StringVariable stringVariable = variable as StringVariable;
                 if (stringVariable != null)
                 {
-                    PlayerPrefs.SetString(prefsKey, stringVariable.Value);
+                    //PlayerPrefs.SetString(prefsKey, stringVariable.Value);
+                    SaveSystem.SetString(prefsKey, stringVariable.Value);
                 }
             }
-            
+            else if (variableType == typeof(Vector2Variable))
+            {
+                Vector2Variable vector2Variable = variable as Vector2Variable;
+                if (vector2Variable != null)
+                {
+                    
+                    SaveSystem.SetVector2(prefsKey, vector2Variable.Value);
+                }
+            }
+
             Continue();
         }
         
@@ -87,15 +94,15 @@ namespace Fungus
         {
             if (key.Length == 0)
             {
-                return "Error: No stored value key selected";
+                return "Error: 未选择键值";
             }
             
             if (variable == null)
             {
-                return "Error: No variable selected";
+                return "Error: 没有选择保存类型";
             }
             
-            return variable.Key + " into '" + key + "'";
+            return variable.Key + " 保存到 '" + key + "'";
         }
         
         public override Color GetButtonColor()

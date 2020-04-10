@@ -8,20 +8,21 @@ namespace Fungus
     /// <summary>
     /// Loads a saved value and stores it in a Boolean, Integer, Float or String variable. If the key is not found then the variable is not modified.
     /// </summary>
-    [CommandInfo("Variable", 
-                 "Load Variable", 
-                 "Loads a saved value and stores it in a Boolean, Integer, Float or String variable. If the key is not found then the variable is not modified.")]
+    [CommandInfo("存档系统",
+                 "读取变量", 
+                 "读取一个变量")]
     [AddComponentMenu("")]
     public class LoadVariable : Command
     {
-        [Tooltip("Name of the saved value. Supports variable substition e.g. \"player_{$PlayerNumber}\"")]
+        [Tooltip("键值")]
         [SerializeField] protected string key = "";
 
-        [Tooltip("Variable to store the value in.")]
+        [Tooltip("变量选择，仅支持Bool，Int,Float,String")]
         [VariableProperty(typeof(BooleanVariable),
                           typeof(IntegerVariable), 
                           typeof(FloatVariable), 
-                          typeof(StringVariable))]
+                          typeof(StringVariable),
+                          typeof(Vector2Variable))]
         [SerializeField] protected Variable variable;
 
         #region Public members
@@ -47,8 +48,7 @@ namespace Fungus
                 BooleanVariable booleanVariable = variable as BooleanVariable;
                 if (booleanVariable != null)
                 {
-                    // PlayerPrefs does not have bool accessors, so just use int
-                    booleanVariable.Value = (PlayerPrefs.GetInt(prefsKey) == 1);
+                    booleanVariable.Value = SaveSystem.GetBool(prefsKey);
                 }
             }
             else if (variableType == typeof(IntegerVariable))
@@ -56,7 +56,7 @@ namespace Fungus
                 IntegerVariable integerVariable = variable as IntegerVariable;
                 if (integerVariable != null)
                 {
-                    integerVariable.Value = PlayerPrefs.GetInt(prefsKey);
+                    integerVariable.Value = SaveSystem.GetInt(prefsKey);
                 }
             }
             else if (variableType == typeof(FloatVariable))
@@ -64,7 +64,8 @@ namespace Fungus
                 FloatVariable floatVariable = variable as FloatVariable;
                 if (floatVariable != null)
                 {
-                    floatVariable.Value = PlayerPrefs.GetFloat(prefsKey);
+                    //floatVariable.Value = PlayerPrefs.GetFloat(prefsKey);
+                    floatVariable.Value = SaveSystem.GetFloat(prefsKey);
                 }
             }
             else if (variableType == typeof(StringVariable))
@@ -72,7 +73,15 @@ namespace Fungus
                 StringVariable stringVariable = variable as StringVariable;
                 if (stringVariable != null)
                 {
-                    stringVariable.Value = PlayerPrefs.GetString(prefsKey);
+                    stringVariable.Value = SaveSystem.GetString(prefsKey);
+                }
+            }
+            else if (variableType == typeof(Vector2Variable))
+            {
+                Vector2Variable vector2Variable = variable as Vector2Variable;
+                if (vector2Variable != null)
+                {
+                    vector2Variable.Value = SaveSystem.GetVector2(prefsKey);
                 }
             }
 
@@ -83,15 +92,15 @@ namespace Fungus
         {
             if (key.Length == 0)
             {
-                return "Error: No stored value key selected";
+                return "Error: 未选择键值";
             }
         
             if (variable == null)
             {
-                return "Error: No variable selected";
+                return "Error: 未选择变量";
             }
 
-            return "'" + key + "' into " + variable.Key;
+            return "'" + key + "' 读取到 " + variable.Key;
         }
 
         public override Color GetButtonColor()

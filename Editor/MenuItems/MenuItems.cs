@@ -7,10 +7,16 @@ namespace Black_Rabbit
 {
     public class MenuItems
     {
-        [MenuItem("Tools/Black_Rabbit/创建/第三人称角色", false, 100)]
+        [MenuItem("Tools/Black_Rabbit/创建/角色/第三人称角色", false, 100)]
         static void CreatePlayer()
         {
             CreateGameObject.SpawnPrefab("Players/Player");
+        }
+
+        [MenuItem("Tools/Black_Rabbit/创建/角色/第一人称角色", false, 100)]
+        static void CreateFPSPlayer()
+        {
+            CreateGameObject.SpawnPrefab("Players/FPS_Player");
         }
 
         [MenuItem("Tools/Black_Rabbit/创建/触发器/基本触发器", false, 100)]

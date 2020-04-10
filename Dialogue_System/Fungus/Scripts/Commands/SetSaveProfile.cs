@@ -10,13 +10,13 @@ namespace Fungus
     /// <summary>
     /// Sets the active profile that the Save Variable and Load Variable commands will use. This is useful to crete multiple player save games. Once set, the profile applies across all Flowcharts and will also persist across scene loads.
     /// </summary>
-    [CommandInfo("Variable", 
-                 "Set Save Profile", 
-                 "Sets the active profile that the Save Variable and Load Variable commands will use. This is useful to crete multiple player save games. Once set, the profile applies across all Flowcharts and will also persist across scene loads.")]
+    [CommandInfo("存档系统", 
+                 "设置存档名称", 
+                 "设置激活中的存档名")]
     [AddComponentMenu("")]
     public class SetSaveProfile : Command
     {
-        [Tooltip("Name of save profile to make active.")]
+        [Tooltip("存档名称")]
         [SerializeField] protected string saveProfileName = "";
 
 		/// <summary>

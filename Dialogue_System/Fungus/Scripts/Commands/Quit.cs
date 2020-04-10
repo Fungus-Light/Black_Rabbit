@@ -1,16 +1,15 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
-// It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
+// fungus-light修改编写
 
 using UnityEngine;
 
 namespace Fungus
 {
     /// <summary>
-    /// Quits the application. Does not work in Editor or Webplayer builds. Shouldn't generally be used on iOS.
+    /// 退出应用，在编辑器和webplayer无效
     /// </summary>
     [CommandInfo("Flow", 
-                 "Quit", 
-                 "Quits the application. Does not work in Editor or Webplayer builds. Shouldn't generally be used on iOS.")]
+                 "退出应用",
+                 "退出应用，在编辑器和webplayer无效")]
     [AddComponentMenu("")]
     public class Quit : Command 
     {
@@ -20,7 +19,7 @@ namespace Fungus
         {
             Application.Quit();
 
-            // On platforms that don't support Quit we just continue onto the next command
+            // 不支持的平台会继续下一条
             Continue();
         }
 
