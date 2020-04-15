@@ -9,15 +9,15 @@ namespace Fungus
     /// Use comments to record design notes and reminders about your game.
     /// </summary>
     [CommandInfo("", 
-                 "Comment", 
-                 "Use comments to record design notes and reminders about your game.")]
+                 "注释", 
+                 "在对话块中加入注释，作为提示")]
     [AddComponentMenu("")]
     public class Comment : Command
     {   
-        [Tooltip("Name of Commenter")]
+        [Tooltip("名字")]
         [SerializeField] protected string commenterName = "";
 
-        [Tooltip("Text to display for this comment")]
+        [Tooltip("要显示的注释文本")]
         [TextArea(2,4)]
         [SerializeField] protected string commentText = "";
 
