@@ -62,6 +62,7 @@ namespace Black_Rabbit
             {
                 control.SendFungusMessage(_message);
                 isUseful = false;
+                UI.HideMessage();
             }
         }
     }
