@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 4851800845743788345}
   - component: {fileID: 4788654048928681909}
   - component: {fileID: 4756179111399429003}
+  - component: {fileID: 4979785660242494671}
   m_Layer: 0
   m_Name: FPS_Player
   m_TagString: Player
@@ -353,6 +354,20 @@ MonoBehaviour:
     - {fileID: 8300000, guid: fef61cddf814a2c49bf7a6c33791c766, type: 3}
     - {fileID: 8300000, guid: 73f938638097f8042ad7842aa5b04ac5, type: 3}
     - {fileID: 8300000, guid: e06c6ae1948cafd45a952ab85ebe4fa7, type: 3}
+--- !u!114 &4979785660242494671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4869193173768052169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634b8d412b94024ba9835d64e941953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlight: {fileID: 0}
+  key: 101
 --- !u!1 &4870390997778763485
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4870390997778763484}
   - component: {fileID: 4870390997778763483}
+  - component: {fileID: 5417736860400589760}
   m_Layer: 0
   m_Name: FlashLight
   m_TagString: Untagged
@@ -423,6 +439,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5417736860400589760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4870390997778763485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bffea0cb577f2141ab1453686b8d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4870390998321986519
 GameObject:
   m_ObjectHideFlags: 0

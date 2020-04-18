@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 512310315}
   - component: {fileID: 512310316}
+  - component: {fileID: 4195349986946702756}
   m_Layer: 0
   m_Name: FlashLight
   m_TagString: Untagged
@@ -70,6 +71,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4195349986946702756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512310314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bffea0cb577f2141ab1453686b8d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963234080
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +271,7 @@ GameObject:
   - component: {fileID: 54630227601236942}
   - component: {fileID: 136143396853349698}
   - component: {fileID: 114364040117789052}
+  - component: {fileID: 2620589955494844392}
   m_Layer: 0
   m_Name: FirstPerson-AIO
   m_TagString: Player
@@ -461,6 +475,20 @@ MonoBehaviour:
     - {fileID: 8300000, guid: fef61cddf814a2c49bf7a6c33791c766, type: 3}
     - {fileID: 8300000, guid: 73f938638097f8042ad7842aa5b04ac5, type: 3}
     - {fileID: 8300000, guid: e06c6ae1948cafd45a952ab85ebe4fa7, type: 3}
+--- !u!114 &2620589955494844392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622511882579774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7634b8d412b94024ba9835d64e941953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlight: {fileID: 0}
+  key: 102
 --- !u!1 &1703441651470552
 GameObject:
   m_ObjectHideFlags: 0
