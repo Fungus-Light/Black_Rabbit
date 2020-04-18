@@ -1827,7 +1827,6 @@ GameObject:
   - component: {fileID: 5515975640166373265}
   - component: {fileID: 5609865136570440545}
   - component: {fileID: 5595954224340183163}
-  - component: {fileID: 6947997155096966152}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1900,6 +1899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useCharacterForward: 0
+  IsEnableMovement: 1
   turnSpeed: 10
   sprintJoystick: 332
   sprintKeyboard: 304
@@ -1917,19 +1917,6 @@ CapsuleCollider:
   m_Height: 1.76
   m_Direction: 1
   m_Center: {x: 0, y: 0.87, z: 0}
---- !u!114 &6947997155096966152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5497639660746176961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f4cfe1fbf15c84b839fbccb3056770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 0}
 --- !u!1 &5497642953553905555
 GameObject:
   m_ObjectHideFlags: 0

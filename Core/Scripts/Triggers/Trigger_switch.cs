@@ -30,6 +30,7 @@ namespace Black_Rabbit
 
         public void ActiveSwitch()
         {
+            audio.Play();
             if (IsSwitched)
             {
                 if (CanRevert)

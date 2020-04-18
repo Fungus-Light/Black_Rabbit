@@ -148,32 +148,32 @@ public class SfxrGenerator : EditorWindow {
 			parameters.GeneratePickupCoin();
 			soundChanged = true;
 		}
-		if (GUILayout.Button("LASER/SHOOT")) {
+		if (GUILayout.Button("激光/射击")) {
 			suggestedName = "LaserShoot";
 			parameters.GenerateLaserShoot();
 			soundChanged = true;
 		}
-		if (GUILayout.Button("EXPLOSION")) {
+		if (GUILayout.Button("爆炸")) {
 			suggestedName = "Explosion";
 			parameters.GenerateExplosion();
 			soundChanged = true;
 		}
-		if (GUILayout.Button("POWERUP")) {
+		if (GUILayout.Button("能量提升")) {
 			suggestedName = "Powerup";
 			parameters.GeneratePowerup();
 			soundChanged = true;
 		}
-		if (GUILayout.Button("HIT/HURT")) {
+		if (GUILayout.Button("击中/受伤")) {
 			suggestedName = "HitHurt";
 			parameters.GenerateHitHurt();
 			soundChanged = true;
 		}
-		if (GUILayout.Button("JUMP")) {
+		if (GUILayout.Button("跳跃")) {
 			suggestedName = "Jump";
 			parameters.GenerateJump();
 			soundChanged = true;
 		}
-		if (GUILayout.Button("BLIP/SELECT")) {
+		if (GUILayout.Button("选择/切换")) {
 			suggestedName = "BlipSelect";
 			parameters.GenerateBlipSelect();
 			soundChanged = true;
@@ -185,7 +185,7 @@ public class SfxrGenerator : EditorWindow {
 			parameters.Mutate();
 			soundChanged = true;
 		}
-		if (GUILayout.Button("RANDOMIZE")) {
+		if (GUILayout.Button("随机")) {
 			suggestedName = "Random";
 			parameters.Randomize();
 			soundChanged = true;
@@ -193,13 +193,13 @@ public class SfxrGenerator : EditorWindow {
 
 		GUILayout.Space(30);
 
-		if (GUILayout.Button("COPY (OLD)")) {
+		if (GUILayout.Button("复制 (OLD)")) {
 			EditorGUIUtility.systemCopyBuffer = parameters.GetSettingsStringLegacy();
 		}
-		if (GUILayout.Button("COPY")) {
+		if (GUILayout.Button("复制")) {
 			EditorGUIUtility.systemCopyBuffer = parameters.GetSettingsString();
 		}
-		if (GUILayout.Button("PASTE")) {
+		if (GUILayout.Button("黏贴")) {
 			suggestedName = null;
 			parameters.SetSettingsString(EditorGUIUtility.systemCopyBuffer);
 			soundChanged = true;
@@ -207,14 +207,14 @@ public class SfxrGenerator : EditorWindow {
 
 		GUILayout.Space(30);
 
-		if (GUILayout.Button("PLAY SOUND")) {
+		if (GUILayout.Button("播放")) {
 			PlaySound();
 		}
 
 		GUILayout.Space(30);
 
-		if (GUILayout.Button("EXPORT WAV")) {
-			var path = EditorUtility.SaveFilePanel("Export as WAV", "", getSuggestedName() + ".wav", "wav");
+		if (GUILayout.Button("导出")) {
+			var path = EditorUtility.SaveFilePanel("导出为WAV", "", getSuggestedName() + ".wav", "wav");
 			if (path.Length != 0) {
 				SfxrSynth synth = new SfxrSynth();
 				synth.parameters.SetSettingsString(parameters.GetSettingsString());
@@ -234,7 +234,7 @@ public class SfxrGenerator : EditorWindow {
 
 		// Begin manual settings column
 		GUILayout.BeginVertical("box");
-		GUILayout.Label("MANUAL SETTINGS", EditorStyles.boldLabel);
+		GUILayout.Label("进阶设定", EditorStyles.boldLabel);
 		GUILayout.Space(8);
 
 		scrollPosition = GUILayout.BeginScrollView(scrollPosition);

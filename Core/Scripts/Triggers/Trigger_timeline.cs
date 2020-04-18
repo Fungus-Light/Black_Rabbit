@@ -45,6 +45,7 @@ namespace Black_Rabbit
         {
             if (useTimes > 0)
             {
+                audio.Play();
                 PD.Play();
                 if (isUnlimited == false)
                 {

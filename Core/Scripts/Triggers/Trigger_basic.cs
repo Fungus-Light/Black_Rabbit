@@ -12,13 +12,16 @@ namespace Black_Rabbit
 
     [AddComponentMenu("Black-Rabbit/Trigger/Basic")]
     [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(AudioSource))]
     public class Trigger_basic : MonoBehaviour
     {
         void Awake()
         {
             this.GetComponent<BoxCollider>().isTrigger = true;
+            this.GetComponent<AudioSource>().playOnAwake = false;
+            this.GetComponent<AudioSource>().loop = false;
         }
-
+        public AudioSource audio;
         public GameType gameType = GameType.TPS;
 
         public Transform messagePos;
@@ -38,6 +41,7 @@ namespace Black_Rabbit
             isUseful = false;
             isTalking = false;
             messagePos = transform.Find(PosName);
+            audio = GetComponent<AudioSource>();
         }
         protected virtual void OnTriggerEnter(Collider other)
         {
