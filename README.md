@@ -3,6 +3,10 @@
 
 基于开源世界的优质代码
 
+本仓库是框架主代码
+
+一些使用了官方包改写的的组件，请查看[Black_Rabbit_Extra](https://github.com/Fungus-Light/Black_Rabbit_Extra)
+
 ---
 
 **注意：本框架运行在Unity 2018.4 以上版本**
@@ -21,7 +25,7 @@
 
 见[文档](./Docs/doc.md)
 
-和fungus差异见[差异](./Docs/differ.md)
+对话模块和fungus差异见[差异](./Docs/differ.md)
 
 - **安装**
 
