@@ -1,6 +1,4 @@
-﻿// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
-// It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
-
+﻿//由Fungus-Light修改编写
 using UnityEngine;
 using System.Collections;
 
@@ -92,7 +90,7 @@ namespace Fungus
             {
                 if (applicationIsQuitting) 
                 {
-                    Debug.LogWarning("FungusManager.Instance() was called while application is quitting. Returning null instead.");
+                    Debug.LogWarning("FungusManager.Instance() 退出时被调用，返回null");
                     return null;
                 }
 
@@ -102,6 +100,7 @@ namespace Fungus
                     {
                         var go = new GameObject();
                         go.name = "FungusManager";
+                        //这里考虑一下是否要删掉
                         DontDestroyOnLoad(go);
                         instance = go.AddComponent<FungusManager>();
                     }
