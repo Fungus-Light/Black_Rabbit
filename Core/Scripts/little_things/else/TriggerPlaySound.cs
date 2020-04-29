@@ -11,7 +11,7 @@ public enum TriggerType
 [RequireComponent(typeof(AudioSource))]
 public class TriggerPlaySound : MonoBehaviour
 {
-    public AudioSource audio;
+    public AudioSource _audio;
     public Trigger_basic trigger;
 
     public TriggerType type;
@@ -20,9 +20,9 @@ public class TriggerPlaySound : MonoBehaviour
 
     void Awake()
     {
-        audio = GetComponent<AudioSource>();
-        audio.playOnAwake = false;
-        audio.loop=false;
+        _audio = GetComponent<AudioSource>();
+        _audio.playOnAwake = false;
+        _audio.loop=false;
         trigger = GetComponent<Trigger_basic>();
     }
 
@@ -63,12 +63,12 @@ public class TriggerPlaySound : MonoBehaviour
     {
         if (type == TriggerType.Switch)
         {
-            audio.Play();
+            _audio.Play();
         }else if (type == TriggerType.Talk)
         {
             if ((trigger as Trigger_talk).isTalking==false)
             {
-                audio.Play();
+                _audio.Play();
             }
         }else if (type==TriggerType.Timeline)
         {
@@ -76,7 +76,7 @@ public class TriggerPlaySound : MonoBehaviour
             {
                 if ((trigger as Trigger_timeline).PD.state!=UnityEngine.Playables.PlayState.Playing)
                 {
-                    audio.Play();
+                    _audio.Play();
                 }
                 
             }

@@ -60,7 +60,7 @@ namespace Black_Rabbit
         {
             if (control != null)
             {
-                audio.Play();
+                _audio.Play();
                 control.SendFungusMessage(_message);
                 isUseful = false;
                 UI.HideMessage();

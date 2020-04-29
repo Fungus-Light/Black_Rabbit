@@ -21,7 +21,7 @@ namespace Black_Rabbit
             this.GetComponent<AudioSource>().playOnAwake = false;
             this.GetComponent<AudioSource>().loop = false;
         }
-        public AudioSource audio;
+        public AudioSource _audio;
         public GameType gameType = GameType.TPS;
 
         public Transform messagePos;
@@ -41,7 +41,7 @@ namespace Black_Rabbit
             isUseful = false;
             isTalking = false;
             messagePos = transform.Find(PosName);
-            audio = GetComponent<AudioSource>();
+            _audio = GetComponent<AudioSource>();
         }
         protected virtual void OnTriggerEnter(Collider other)
         {
