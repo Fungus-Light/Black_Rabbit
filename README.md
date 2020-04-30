@@ -1,46 +1,54 @@
 # Black_Rabbit
-这是一个unity 的3D游戏叙事框架，适合开发第一人称/第三人称的叙事互动类游戏。
+[中文版](./README_ZH.md)
 
-基于开源世界的优质代码
+This is a story-telling framework for Unity to create First Person view/Third Person view interactive games.
 
-本仓库是框架主代码
+Base on many excellent open source code.
 
-一些使用了官方包改写的的组件，请查看[Black_Rabbit_Extra](https://github.com/Fungus-Light/Black_Rabbit_Extra)
+This is the main reposity of this project.
 
----
-
-**注意：本框架运行在Unity 2018.4 以上版本**
-
-**从0.0.3版本起，Black_Rabbit移除了对Lua的支持，至此，对话系统可以看作完全与fungus割裂开**
-
-**如果需要使用Lua，可以考虑使用0.0.2及之前版本，或者使用原版fungus替代对话系统**
+If you want some features provided by Unity. Look At [Black_Rabbit_Extra](https://github.com/Fungus-Light/Black_Rabbit_Extra)
 
 ---
 
-如果Github访问较慢，可以使用国内码云镜像：[gitee](https://gitee.com/fungus-light/Black_Rabbit)
+**warning： this framework runs on Unity 2018.4 or above.**
 
-如有需要，可以加入QQ群讨论并获取最新更新消息：**1098402215**
+**from v-0.0.3 ，Black_Rabbit has  removed Lua support.**
 
-- **使用文档**
+**If you still want Lua support，You can use v-0.0.2 or earlier editions，or use origin Fungus .**
 
-见[文档](./Docs/doc.md)
+---
 
-对话模块和fungus差异见[差异](./Docs/differ.md)
+中国用户：如果Github访问较慢，可以使用国内码云镜像：[gitee](https://gitee.com/fungus-light/Black_Rabbit)
 
-- **安装**
+中国用户：如有需要，可以加入QQ群讨论并获取最新更新消息：**1098402215**
 
-在Unity 2018.4版本以上新建3D项目，
+- DOCS
 
-从Release界面下载最新打包版
+See [Docs](./Docs/doc.md)
 
-导入包即可
+differs between dialog mod and fungus , See [Differs](./Docs/differ.md)
 
-- **开发**
+- Install
 
-使用Unity2018.4以上版本新建项目，fork本仓库，将你自己的库克隆到项目文件夹即可。
+Create a new 3D project with Unity 2018.4 or above edition.
 
-- **反馈与协作**
+Download the latest release package.
 
-如有bug以及功能需求，请在issue区域或QQ群反映，我会尽快修复和反馈
+Import the package.
 
-如果有需要提交新的功能或者代码，请提交pull request
+- develop
+
+Create a new 3D project with Unity 2018.4 or above edition.
+
+Fork this  reposity，clone your reposity into your project directory.
+
+Create your own edition of Black Rabbit.
+
+- Bug report and help make it better.
+
+Use issues to report.
+
+中国用户可以在QQ群反映，我会尽快修复和反馈
+
+Add new feature，please use pull request.

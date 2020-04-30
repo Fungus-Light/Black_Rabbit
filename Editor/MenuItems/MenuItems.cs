@@ -44,13 +44,13 @@ namespace Black_Rabbit
             CreateGameObject.SpawnPrefab("Triggers/Trigger_fungus");
         }
 
-        [MenuItem(Config.isEnglish == true ? ("Tools/Black_Rabbit/create/cameras/自由摄像机") : ("Tools/Black_Rabbit/创建/相机/自由摄像机"), false, 100)]
+        [MenuItem(Config.isEnglish == true ? ("Tools/Black_Rabbit/create/cameras/free look") : ("Tools/Black_Rabbit/创建/相机/自由摄像机"), false, 100)]
         static void CreateFreeLookCam()
         {
             CreateGameObject.SpawnPrefab("Camera/LookPlayer");
         }
 
-        [MenuItem(Config.isEnglish == true ? ("Tools/Black_Rabbit/create/UI/提示信息UI") : ("Tools/Black_Rabbit/创建/UI/提示信息UI"), false, 100)]
+        [MenuItem(Config.isEnglish == true ? ("Tools/Black_Rabbit/create/UI/message ui") : ("Tools/Black_Rabbit/创建/UI/提示信息UI"), false, 100)]
         static void CreateMessageUI()
         {
             CreateGameObject.SpawnPrefab("UIs/MessageUI");
