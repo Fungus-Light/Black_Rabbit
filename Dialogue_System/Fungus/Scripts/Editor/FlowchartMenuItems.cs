@@ -1,6 +1,6 @@
 // Fungus-Light修改和编写
 
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using Black_Rabbit;
 
@@ -8,7 +8,7 @@ namespace Fungus.EditorUtils
 {
     public class FlowchartMenuItems
     {
-        [UnityEditor.MenuItem("Tools/Fungus/创建/对话流", false, 0)]
+        [UnityEditor.MenuItem(Config.isEnglish == true ? "Tools/Black_Rabbit/create/control/flowchart" : "Tools/Fungus/创建/控制/对话流", false, 0)]
         static void CreateFlowchart()
         {
             GameObject go = SpawnPrefab("Flowchart");
@@ -30,27 +30,14 @@ namespace Fungus.EditorUtils
             }
         }
 
-        //[MenuItem("Tools/Fungus/Create/Fungus Logo", false, 1000)]
-        //static void CreateFungusLogo()
-        //{
-        //    SpawnPrefab("FungusLogo");
-        //}
+        [MenuItem(Config.isEnglish==true? "Tools/Black_Rabbit/create/BlackRabbit-Logo" : "Tools/Black_Rabbit/创建/BlackRabbit-Logo", false, 1000)]
+        static void CreateMyLogo()
+        {
+            SpawnPrefab("Logo");
+        }
 
-        //[UnityEditor.MenuItem("Tools/Fungus/Utilities/导出Black_Rabbit包")]
-        //static void ExportFungusPackage()
-        //{
-        //    string filename = "Black_Rabbit"+Config.version;
-        //    string path = EditorUtility.SaveFilePanel("导出Black_Rabbit", "",filename , "unitypackage");           
-        //    if(path.Length == 0) 
-        //    {
-        //        return;
-        //    }
 
-        //    string[] folders = new string[] { "Assets/Black_Rabbit" };
 
-        //    AssetDatabase.ExportPackage(folders, path, ExportPackageOptions.Recurse);
-        //}
-            
         public static GameObject SpawnPrefab(string prefabName)
         {
             GameObject prefab = Resources.Load<GameObject>("Prefabs/" + prefabName);
@@ -72,7 +59,7 @@ namespace Fungus.EditorUtils
             }
 
             Selection.activeGameObject = go;
-            
+
             Undo.RegisterCreatedObjectUndo(go, "Create Object");
 
             return go;

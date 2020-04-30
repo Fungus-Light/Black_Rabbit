@@ -14,7 +14,8 @@ namespace Black_Rabbit
 
         void Start()
         {
-            //初始化摄像机
+            //init camera
+            //初始化摄影机
             fpsCam = GetComponentInParent<Camera>();
             ui = FindObjectOfType<MessageBar>();
             ui.HideMessage();
