@@ -63,6 +63,14 @@ namespace CommandTerminal
             SceneManager.LoadScene(scene);
         }
 
+        [RegisterCommand(Name ="GameSpeed",Help ="Set Game Time Scale",MinArgCount =1,MaxArgCount =1)]
+        static void CommandSpeed(CommandArg[] args)
+        {
+            float time = args[0].Float;
+            Terminal.Log("Your Game speed is set to "+time);
+            Time.timeScale = time;
+        }
+
 
     #if DEBUG
         [RegisterCommand(Help = "Outputs the StackTrace of the previous message", MaxArgCount = 0)]
