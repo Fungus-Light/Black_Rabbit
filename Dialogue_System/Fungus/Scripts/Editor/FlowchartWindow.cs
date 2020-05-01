@@ -1,4 +1,4 @@
-
+ï»¿
 using UnityEngine;
 using UnityEditor;
 using System;
@@ -232,7 +232,7 @@ namespace Fungus.EditorUtils
             }
         }
 
-        [MenuItem("Tools/Fungus/¶Ô»°±à¼­Æ÷")]
+        [MenuItem("Tools/Black_Rabbit/å¯¹è¯ç¼–è¾‘å™¨")]
         static void Init()
         {
             GetWindow(typeof(FlowchartWindow), false, "Flowchart");
@@ -248,7 +248,7 @@ namespace Fungus.EditorUtils
             nodeStyle.wordWrap = true;
 
             addTexture = FungusEditorResources.AddSmall;
-            addButtonContent = new GUIContent(addTexture, "Ìí¼ÓĞÂ¶Ô»°¿é");
+            addButtonContent = new GUIContent(addTexture, "æ·»åŠ æ–°å¯¹è¯å—");
             connectionPointTexture = FungusEditorResources.ConnectionPoint;
             gridLineColor.a = EditorGUIUtility.isProSkin ? 0.5f : 0.25f;
 
@@ -612,7 +612,7 @@ namespace Fungus.EditorUtils
 
             if (flowchart == null)
             {
-                GUILayout.Label("Î´Ñ¡ÖĞ³¡¾°ÖĞ¶Ô»°Á÷ÎïÌå");
+                GUILayout.Label("æœªé€‰ä¸­åœºæ™¯ä¸­å¯¹è¯æµç‰©ä½“");
                 return;
             }
 

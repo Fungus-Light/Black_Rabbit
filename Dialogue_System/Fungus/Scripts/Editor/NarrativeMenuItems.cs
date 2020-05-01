@@ -1,4 +1,4 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
+ï»¿// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
 using UnityEngine;
@@ -10,55 +10,55 @@ namespace Fungus.EditorUtils
     public class NarrativeMenuItems 
     {
 
-        [MenuItem("Tools/Fungus/´´½¨/½ÇÉ«", false, 50)]
+        [MenuItem("Tools/Black_Rabbit/åˆ›å»º/å¯¹è¯/è§’è‰²", false, 50)]
         static void CreateCharacter()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("Character");
             go.transform.position = Vector3.zero;
         }
 
-        [MenuItem("Tools/Fungus/´´½¨/¶Ô»°¿ò", false, 51)]
+        [MenuItem("Tools/Black_Rabbit/åˆ›å»º/å¯¹è¯/å¯¹è¯æ¡†", false, 51)]
         static void CreateSayDialog()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("SayDialog");
             go.transform.position = Vector3.zero;
         }
 
-        [MenuItem("Tools/Fungus/´´½¨/Ñ¡ÏîUI", false, 52)]
+        [MenuItem("Tools/Black_Rabbit/åˆ›å»º/å¯¹è¯/é€‰é¡¹UI", false, 52)]
         static void CreateMenuDialog()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("MenuDialog");
             go.transform.position = Vector3.zero;
         }
 
-        [MenuItem("Tools/Fungus/´´½¨/±êÇ©", false, 53)]
+        [MenuItem("Tools/Black_Rabbit/åˆ›å»º/å¯¹è¯/æ ‡ç­¾", false, 53)]
         static void CreateTag()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("Tag");
             go.transform.position = Vector3.zero;
         }
 
-        [MenuItem("Tools/Fungus/´´½¨/Audio Tag", false, 54)]
+        [MenuItem("Tools/Black_Rabbit/åˆ›å»º/å¯¹è¯/å£°éŸ³æ ‡ç­¾", false, 54)]
         static void CreateAudioTag()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("AudioTag");
             go.transform.position = Vector3.zero;
         }
 
-        [MenuItem("Tools/Fungus/´´½¨/ÎèÌ¨", false, 55)]
+        //[MenuItem("Tools/Black_Rabbit/Fungus/åˆ›å»º/èˆå°", false, 55)]
         static void CreateStage()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("Stage");
             go.transform.position = Vector3.zero;
         }
         
-        [MenuItem("Tools/Fungus/´´½¨/ÎèÌ¨Î»ÖÃ", false, 56)]
+        //[MenuItem("Tools/Black_Rabbit/Fungus/åˆ›å»º/èˆå°ä½ç½®", false, 56)]
         static void CreateStagePosition()
         {
             FlowchartMenuItems.SpawnPrefab("StagePosition");
         }
 
-        [MenuItem("Tools/Fungus/´´½¨/±¾µØ»¯ÎïÌå", false, 57)]
+        //[MenuItem("Tools/Black_Rabbit/Fungus/åˆ›å»º/æœ¬åœ°åŒ–ç‰©ä½“", false, 57)]
         static void CreateLocalization()
         {
             GameObject go = FlowchartMenuItems.SpawnPrefab("Localization");

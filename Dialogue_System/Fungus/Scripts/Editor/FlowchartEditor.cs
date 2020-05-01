@@ -1,11 +1,9 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
-// It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
-
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Black_Rabbit;
 
 namespace Fungus.EditorUtils
 {
@@ -83,7 +81,7 @@ namespace Fungus.EditorUtils
 
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button(new GUIContent("Open Flowchart Window", "Opens the Flowchart Window")))
+            if (GUILayout.Button(new GUIContent(Config.isEnglish?"Open Flowchart Window":"打开流程块编辑器", Config.isEnglish ? "Opens the Flowchart Window":"打开流程对话块编辑器")))
             {
                 EditorWindow.GetWindow(typeof(FlowchartWindow), false, "Flowchart");
             }

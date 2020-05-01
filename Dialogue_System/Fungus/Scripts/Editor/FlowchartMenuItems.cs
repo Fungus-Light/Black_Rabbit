@@ -8,7 +8,7 @@ namespace Fungus.EditorUtils
 {
     public class FlowchartMenuItems
     {
-        [UnityEditor.MenuItem(Config.isEnglish == true ? "Tools/Black_Rabbit/create/control/flowchart" : "Tools/Fungus/创建/控制/对话流", false, 0)]
+        [UnityEditor.MenuItem(Config.isEnglish == true ? "Tools/Black_Rabbit/create/control/flowchart" : "Tools/Black_Rabbit/创建/控制/对话流", false, 0)]
         static void CreateFlowchart()
         {
             GameObject go = SpawnPrefab("Flowchart");
@@ -30,7 +30,7 @@ namespace Fungus.EditorUtils
             }
         }
 
-        [MenuItem(Config.isEnglish==true? "Tools/Black_Rabbit/create/BlackRabbit-Logo" : "Tools/Black_Rabbit/创建/BlackRabbit-Logo", false, 1000)]
+        [MenuItem(Config.isEnglish == true ? "Tools/Black_Rabbit/create/BlackRabbit-Logo" : "Tools/Black_Rabbit/创建/BlackRabbit-Logo", false, 1000)]
         static void CreateMyLogo()
         {
             SpawnPrefab("Logo");

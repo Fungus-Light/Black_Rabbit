@@ -23,7 +23,7 @@ using System;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-
+using Black_Rabbit;
 /// <summary>
 /// Implements a Unity window to generate sounds and their parameters with usfxr.
 /// </summary>
@@ -63,7 +63,7 @@ public class SfxrGenerator : EditorWindow {
 	// ================================================================================================================
 	// PUBLIC INTERFACE -----------------------------------------------------------------------------------------------
 
-	[MenuItem("Tools/Fungus/小功能/音效合成器")]
+	[MenuItem(Config.isEnglish? "Tools/Black_Rabbit/Utility/Simple Sound Maker" : "Tools/Black_Rabbit/功能/音效合成器")]
 	public static void Initialize() {
 		var window = ScriptableObject.CreateInstance<SfxrGenerator>();
 		window.name = "音效合成器";

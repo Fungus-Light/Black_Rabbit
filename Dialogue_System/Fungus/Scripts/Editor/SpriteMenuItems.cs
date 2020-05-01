@@ -1,4 +1,4 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
+ï»¿// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
 using UnityEditor;
@@ -7,25 +7,25 @@ namespace Fungus.EditorUtils
 {
     public class SpriteMenuItems 
     {
-        [MenuItem("Tools/Fungus/´´½¨/¿Éµã»÷Í¼Æ¬", false, 150)]
+        //[MenuItem("Tools/Black_Rabbit/Fungus/åˆ›å»º/å¯ç‚¹å‡»å›¾ç‰‡", false, 150)]
         static void CreateClickableSprite()
         {
             FlowchartMenuItems.SpawnPrefab("ClickableSprite");
         }
 
-        [MenuItem("Tools/Fungus/´´½¨/¿ÉÍÏ¶¯Í¼Æ¬", false, 151)]
+        //[MenuItem("Tools/Black_Rabbit/Fungus/åˆ›å»º/å¯æ‹–åŠ¨å›¾ç‰‡", false, 151)]
         static void CreateDraggableSprite()
         {
             FlowchartMenuItems.SpawnPrefab("DraggableSprite");
         }
 
-        [MenuItem("Tools/Fungus/´´½¨/ÍÏ·ÅÄ¿±êÍ¼Æ¬", false, 152)]
+        //[MenuItem("Tools/Black_Rabbit/Fungus/åˆ›å»º/æ‹–æ”¾ç›®æ ‡å›¾ç‰‡", false, 152)]
         static void CreateDragTargetSprite()
         {
             FlowchartMenuItems.SpawnPrefab("DragTargetSprite");
         }
 
-        [MenuItem("Tools/Fungus/´´½¨/Parallax Sprite", false, 152)]
+        //[MenuItem("Tools/Black_Rabbit/Fungus/åˆ›å»º/Parallax Sprite", false, 152)]
         static void CreateParallaxSprite()
         {
             FlowchartMenuItems.SpawnPrefab("ParallaxSprite");

@@ -1,4 +1,4 @@
-// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
+ï»¿// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
 using UnityEditor;
@@ -7,13 +7,13 @@ namespace Fungus.EditorUtils
 {
     public class SaveMenuItems 
     {
-        [MenuItem("Tools/Fungus/´´½¨/±£´æ²Ëµ¥", false, 1100)]
+        //[MenuItem("Tools/Black_Rabbit/Fungus/åˆ›å»º/ä¿å­˜èœå•", false, 1100)]
         static void CreateSaveMenu()
         {
             FlowchartMenuItems.SpawnPrefab("SaveMenu");
         }
 
-        [MenuItem("Tools/Fungus/´´½¨/±£´æÊı¾İ", false, 1101)]
+        //[MenuItem("Tools/Black_Rabbit/Fungus/åˆ›å»º/ä¿å­˜æ•°æ®", false, 1101)]
         static void CreateSaveData()
         {
             FlowchartMenuItems.SpawnPrefab("SaveData");
