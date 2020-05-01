@@ -10,6 +10,8 @@ using System.Collections.Generic;
 
 namespace Black_Rabbit
 {
+    public enum InvertMouseInput { None, X, Y, Both }
+
     [RequireComponent(typeof(CapsuleCollider)), RequireComponent(typeof(Rigidbody)), AddComponentMenu("First Person Controller")]
     public class FirstPersonAIO : MonoBehaviour
     {
@@ -23,7 +25,7 @@ namespace Black_Rabbit
 
         #region Look Settings
         public bool enableCameraMovement = true;
-        public enum InvertMouseInput { None, X, Y, Both }
+        
         public InvertMouseInput mouseInputInversion = InvertMouseInput.None;
         public float verticalRotationRange = 170;
         public float mouseSensitivity = 10;
@@ -44,9 +46,9 @@ namespace Black_Rabbit
         Image StaminaMeterBG;
         public Sprite Crosshair;
         public Vector3 targetAngles;
-        private Vector3 followAngles;
-        private Vector3 followVelocity;
-        private Vector3 originalRotation;
+        public Vector3 followAngles;
+        public Vector3 followVelocity;
+        public Vector3 originalRotation;
         #endregion
 
         #region Movement Settings
@@ -208,7 +210,7 @@ namespace Black_Rabbit
         {
             #region Look Settings - Awake
             originalRotation = transform.localRotation.eulerAngles;
-
+            //Debug.Log(originalLocalPosition);
             #endregion
 
             #region Movement Settings - Awake
@@ -234,6 +236,13 @@ namespace Black_Rabbit
 
         private void Start()
         {
+
+            //fuck
+            followAngles = Vector3.zero;
+            originalRotation = Vector3.zero;
+            targetAngles = Vector3.zero;
+
+
             #region Look Settings - Start
 
             if (autoCrosshair || drawStaminaMeter)
@@ -272,6 +281,7 @@ namespace Black_Rabbit
             }
             mouseSensitivityInternal = mouseSensitivity;
             cameraStartingPosition = playerCamera.transform.localPosition;
+            //Debug.Log(cameraStartingPosition);
             if (lockAndHideCursor) { Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false; }
             baseCamFOV = playerCamera.fieldOfView;
             #endregion
@@ -315,15 +325,20 @@ namespace Black_Rabbit
                 float camFOV = playerCamera.fieldOfView;
                 mouseYInput = mouseInputInversion == InvertMouseInput.None || mouseInputInversion == InvertMouseInput.X ? Input.GetAxis("Mouse Y") : -Input.GetAxis("Mouse Y");
                 mouseXInput = mouseInputInversion == InvertMouseInput.None || mouseInputInversion == InvertMouseInput.Y ? Input.GetAxis("Mouse X") : -Input.GetAxis("Mouse X");
+                //Debug.Log(mouseXInput);
+                //Debug.Log(mouseYInput);
                 if (targetAngles.y > 180) { targetAngles.y -= 360; followAngles.y -= 360; } else if (targetAngles.y < -180) { targetAngles.y += 360; followAngles.y += 360; }
                 if (targetAngles.x > 180) { targetAngles.x -= 360; followAngles.x -= 360; } else if (targetAngles.x < -180) { targetAngles.x += 360; followAngles.x += 360; }
                 targetAngles.y += mouseXInput * (mouseSensitivityInternal - ((baseCamFOV - camFOV) * fOVToMouseSensitivity) / 6f);
                 targetAngles.x += mouseYInput * (mouseSensitivityInternal - ((baseCamFOV - camFOV) * fOVToMouseSensitivity) / 6f);
                 targetAngles.y = Mathf.Clamp(targetAngles.y, -0.5f * Mathf.Infinity, 0.5f * Mathf.Infinity);
                 targetAngles.x = Mathf.Clamp(targetAngles.x, -0.5f * verticalRotationRange, 0.5f * verticalRotationRange);
+                //Debug.Log(targetAngles);
                 followAngles = Vector3.SmoothDamp(followAngles, targetAngles, ref followVelocity, (cameraSmoothing) / 100);
                 playerCamera.transform.localRotation = Quaternion.Euler(-followAngles.x + originalRotation.x, 0, 0);
                 transform.localRotation = Quaternion.Euler(0, followAngles.y + originalRotation.y, 0);
+                //Debug.Log(playerCamera.transform.localRotation);
+                //Debug.Log(transform.localRotation);
             }
 
             #endregion
@@ -825,7 +840,7 @@ namespace Black_Rabbit
 
             t.verticalRotationRange = EditorGUILayout.Slider(new GUIContent("垂直旋转范围", "Determines how much range does the camera have to move vertically."), t.verticalRotationRange, 90, 180);
 
-            t.mouseInputInversion = (FirstPersonAIO.InvertMouseInput)EditorGUILayout.EnumPopup(new GUIContent("鼠标轴翻转", "Determines if mouse input should be inverted, and along which axes"), t.mouseInputInversion);
+            t.mouseInputInversion = (InvertMouseInput)EditorGUILayout.EnumPopup(new GUIContent("鼠标轴翻转", "Determines if mouse input should be inverted, and along which axes"), t.mouseInputInversion);
 
             t.mouseSensitivityInternal = t.mouseSensitivity = EditorGUILayout.Slider(new GUIContent("鼠标灵敏度", "Determines how sensitive the mouse is."), t.mouseSensitivity, 1, 15);
             //t.mouseSensitivity = EditorGUILayout.Slider(new GUIContent("Mouse Sensitivity","Determines how sensitive the mouse is."),t.mouseSensitivity, 1,15);
