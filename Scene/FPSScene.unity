@@ -1187,6 +1187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444902134}
   - component: {fileID: 444902135}
+  - component: {fileID: 444902136}
   m_Layer: 0
   m_Name: Console
   m_TagString: Untagged
@@ -1228,6 +1229,35 @@ MonoBehaviour:
   maxLogCount: 1000
   logFontSize: 12
   scaleFactor: 1
+--- !u!114 &444902136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444902133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10dfe3410e3e2194ba720a6eeb0c4924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHeight: 0.7
+  SmallTerminalRatio: 0.33
+  ToggleSpeed: 360
+  ToggleHotkey: '`'
+  ToggleFullHotkey: '#`'
+  BufferSize: 512
+  ConsoleFont: {fileID: 0}
+  InputCaret: $>
+  ShowGUIButtons: 0
+  RightAlignButtons: 0
+  InputContrast: 0
+  BackgroundColor: {r: 0, g: 0, b: 0, a: 1}
+  ForegroundColor: {r: 1, g: 1, b: 1, a: 1}
+  ShellColor: {r: 1, g: 1, b: 1, a: 1}
+  InputColor: {r: 0, g: 1, b: 1, a: 1}
+  WarningColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  ErrorColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &454559537
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,6 +3501,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979785660242494671, guid: a66e48c5a2d1da14396cdbad0b4a54d3,
+        type: 3}
+      propertyPath: key
+      value: 102
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a66e48c5a2d1da14396cdbad0b4a54d3, type: 3}
