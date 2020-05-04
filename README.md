@@ -1,10 +1,6 @@
 # Black_Rabbit
 [中文版](./README_ZH.md)
 
-You can find me at itch.io
-
-<iframe frameborder="0" src="https://itch.io/embed/627370?linkback=true&amp;border_width=4&amp;link_color=fa5b79&amp;border_color=d9d4f6" width="558" height="173"><a href="https://fungus-light.itch.io/black-rabbit-framework">Black-Rabbit-framework by Fungus-Light</a></iframe>
-
 This is a story-telling framework for Unity to create First Person view/Third Person view interactive games.
 
 Base on many excellent open source code.
