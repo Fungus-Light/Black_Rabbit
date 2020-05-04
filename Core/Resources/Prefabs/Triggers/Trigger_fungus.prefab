@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7728717463704465644}
   - component: {fileID: 7728717463704465647}
   - component: {fileID: 7728717463704465646}
+  - component: {fileID: 8160049582024671434}
   m_Layer: 0
   m_Name: Trigger_fungus
   m_TagString: Untagged
@@ -106,6 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6968168a76227054392f7bb3ab04cb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio: {fileID: 0}
+  gameType: 0
   messagePos: {fileID: 0}
   PosName: Message_Pos
   _Name: "\u5BF9\u8BDD\u89E6\u53D1\u5668"
@@ -113,9 +116,108 @@ MonoBehaviour:
   UI: {fileID: 0}
   isUseful: 0
   isTalking: 0
+  isShow: 1
   control: {fileID: 0}
   _message: doit
   blockName: flow
+  key: 101
+  activeAuto: 0
+--- !u!82 &8160049582024671434
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728717463704465632}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7728717463826452251
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,8 +289,6 @@ MonoBehaviour:
   localizationId: 
   showLineNumbers: 0
   hideCommands: []
-  luaEnvironment: {fileID: 0}
-  luaBindingName: flowchart
 --- !u!114 &7728717463826452230
 MonoBehaviour:
   m_ObjectHideFlags: 0
