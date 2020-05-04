@@ -1,4 +1,8 @@
 # Black_Rabbit_中文说明
+现在已经发布到itch.io
+
+<iframe frameborder="0" src="https://itch.io/embed/627370?linkback=true&amp;border_width=4&amp;link_color=fa5b79&amp;border_color=d9d4f6" width="558" height="173"><a href="https://fungus-light.itch.io/black-rabbit-framework">Black-Rabbit-framework by Fungus-Light</a></iframe>
+
 这是一个unity 的3D游戏叙事框架，适合开发第一人称/第三人称的叙事互动类游戏。
 
 基于开源世界的优质代码
