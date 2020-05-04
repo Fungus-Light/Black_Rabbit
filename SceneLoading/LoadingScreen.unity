@@ -271,7 +271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0002746582, y: 0.00018310547}
+  m_AnchoredPosition: {x: -0.00030517578, y: 0.00018310547}
   m_SizeDelta: {x: -0.00012207031, y: 0.000061035156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &396397866
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 1088690358}
   - component: {fileID: 1088690357}
   m_Layer: 5
-  m_Name: MoreMountainsLogo
+  m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -640,8 +640,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.080009, y: 70.70001}
-  m_SizeDelta: {x: 94.554, y: 94.6}
+  m_AnchoredPosition: {x: 0.080009, y: 133.81}
+  m_SizeDelta: {x: 215, y: 215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088690357
 MonoBehaviour:
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ea8f56c43254d41728f5ac4e8299b6c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3356b9999441cca4b9fe0b971a542a34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
