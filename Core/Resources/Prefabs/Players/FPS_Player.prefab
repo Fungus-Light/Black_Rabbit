@@ -165,7 +165,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4869193173768052169}
-  m_LocalRotation: {x: -0, y: 0.39840215, z: -0, w: 0.9172109}
+  m_LocalRotation: {x: 0, y: 0.398405, z: 0, w: 0.9172096}
   m_LocalPosition: {x: 10.08, y: 1.915, z: -12.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -187,7 +187,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &4788654048928681909
 CapsuleCollider:
@@ -229,6 +229,9 @@ MonoBehaviour:
   drawStaminaMeter: 0
   Crosshair: {fileID: 0}
   targetAngles: {x: -76.5, y: -160.49994, z: 0}
+  followAngles: {x: 0, y: 0, z: 0}
+  followVelocity: {x: 0, y: 0, z: 0}
+  originalRotation: {x: 0, y: 0, z: 0}
   playerCanMove: 1
   walkByDefault: 1
   walkSpeed: 4
@@ -367,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlight: {fileID: 0}
-  key: 101
+  key: 102
 --- !u!1 &4870390997778763485
 GameObject:
   m_ObjectHideFlags: 0
