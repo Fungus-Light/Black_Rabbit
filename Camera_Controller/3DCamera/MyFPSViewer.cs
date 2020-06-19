@@ -10,6 +10,8 @@ namespace Black_Rabbit
         private Camera fpsCam;                                              // Holds a reference to the first person camera                                           // Float to store the time the player will be allowed to fire again, after firing
         public MessageBar ui;
 
+        public bool isDebug=false;
+
         private Trigger_basic prevTrigger;
 
         void Start()
@@ -30,6 +32,8 @@ namespace Black_Rabbit
             // 声明射线
             RaycastHit hit;
 
+            
+
             // 检查是否碰到任何物体
             if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
             {
@@ -37,10 +41,15 @@ namespace Black_Rabbit
                 // Get a reference to a health script attached to the collider we hit
                 Trigger_basic item = hit.collider.GetComponent<Trigger_basic>();
 
+                if (isDebug)
+                {
+                    Debug.DrawLine(rayOrigin, hit.point, Color.green);
+                }
+
                 if (item != null)
                 {
 
-                    if (item.isShow)
+                    if (item.isShow&&item.gameType==GameType.FPS)
                     {
                         ui.ShowMessage(item._Name, item._Message, item.messagePos.transform);
                     }
