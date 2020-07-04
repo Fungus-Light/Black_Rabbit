@@ -51,6 +51,7 @@ namespace Black_Rabbit
 
                     if (item.isShow&&item.gameType==GameType.FPS)
                     {
+                        //item.GetComponent<Outline>().ShowOutLine();
                         ui.ShowMessage(item._Name, item._Message, item.messagePos.transform);
                     }
                     
@@ -67,7 +68,7 @@ namespace Black_Rabbit
                 else
                 {
                     ui.HideMessage();
-
+                    
                     CLearPrev();
                 }
             }
@@ -83,6 +84,7 @@ namespace Black_Rabbit
             if (prevTrigger != null)
             {
                 prevTrigger.MakeUseless();
+                //prevTrigger.GetComponent<Outline>().HideOutLine();
                 prevTrigger = null;
             }
         }
