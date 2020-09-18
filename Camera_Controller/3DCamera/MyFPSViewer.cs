@@ -10,7 +10,9 @@ namespace Black_Rabbit
         private Camera fpsCam;                                              // Holds a reference to the first person camera                                           // Float to store the time the player will be allowed to fire again, after firing
         public MessageBar ui;
 
-        public bool isDebug=false;
+        public bool isDebug = false;
+
+        public bool ISDetecting = true;
 
         private Trigger_basic prevTrigger;
 
@@ -23,59 +25,77 @@ namespace Black_Rabbit
             ui.HideMessage();
         }
 
+        public void StartDetecting()
+        {
+            ISDetecting = true;
+        }
+
+        public void StopDetecting()
+        {
+            ISDetecting = false;
+        }
 
         void Update()
         {
-            // 在屏幕中间创建一个Vecter3
-            Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
-
-            // 声明射线
-            RaycastHit hit;
-
-            
-
-            // 检查是否碰到任何物体
-            if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
+            if (ISDetecting)
             {
+                Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
 
-                // Get a reference to a health script attached to the collider we hit
-                Trigger_basic item = hit.collider.GetComponent<Trigger_basic>();
+                // 声明射线
+                RaycastHit hit;
 
-                if (isDebug)
+
+
+                // 检查是否碰到任何物体
+                if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
                 {
-                    Debug.DrawLine(rayOrigin, hit.point, Color.green);
-                }
 
-                if (item != null)
-                {
+                    // Get a reference to a health script attached to the collider we hit
+                    Trigger_basic item = hit.collider.GetComponent<Trigger_basic>();
 
-                    if (item.isShow&&item.gameType==GameType.FPS)
+                    if (isDebug)
                     {
-                        //item.GetComponent<Outline>().ShowOutLine();
-                        ui.ShowMessage(item._Name, item._Message, item.messagePos.transform);
+                        Debug.DrawLine(rayOrigin, hit.point, Color.green);
                     }
-                    
 
-                    CLearPrev();
-                    prevTrigger = item;
-                    if (item.gameType==GameType.FPS)
+                    if (item != null)
                     {
-                        item.MakeUseful();
-                    }
-                    
 
+                        if (item.isShow && item.gameType == GameType.FPS)
+                        {
+                            //item.GetComponent<Outline>().ShowOutLine();
+                            ui.ShowMessage(item._Name, item._Message, item.messagePos.transform);
+                            if (item.outlineOBJ != null)
+                            {
+                                item.outlineOBJ.ShowOutLine();
+                            }
+
+                        }
+
+
+                        CLearPrev();
+                        prevTrigger = item;
+                        if (item.gameType == GameType.FPS)
+                        {
+                            item.MakeUseful();
+                        }
+
+
+                    }
+                    else
+                    {
+                        ui.HideMessage();
+
+                        CLearPrev();
+                    }
                 }
                 else
                 {
                     ui.HideMessage();
-                    
-                    CLearPrev();
                 }
             }
-            else
-            {
-                ui.HideMessage();
-            }
+            // 在屏幕中间创建一个Vecter3
+
 
         }
 
@@ -83,9 +103,14 @@ namespace Black_Rabbit
         {
             if (prevTrigger != null)
             {
+                if (prevTrigger.outlineOBJ!=null)
+                {
+                    prevTrigger.outlineOBJ.HideOutLine();
+                }
                 prevTrigger.MakeUseless();
                 //prevTrigger.GetComponent<Outline>().HideOutLine();
                 prevTrigger = null;
+
             }
         }
 

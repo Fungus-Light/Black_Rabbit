@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36290324, g: 0.56618196, b: 0.8437108, a: 1}
+  m_IndirectSpecularColor: {r: 0.32007405, g: 0.4848616, b: 0.842958, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -323,6 +323,7 @@ MonoBehaviour:
   isUseful: 0
   isTalking: 0
   isShow: 1
+  outlineOBJ: {fileID: 738443583}
   control: {fileID: 0}
   _message: doit
   blockName: flow
@@ -535,7 +536,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &202279849
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -547,7 +548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: "\u4F60\u5C45\u7136\u770B\u5F97\u5230\u6211\uFF0C\u592A\u4E0D\u53EF\u601D\u8BAE\u4E86"
+  storyText: "\u6CE8\u610F\u5230\u6211\u8EAB\u4E0A\u7684\u63CF\u8FB9\u4E86\u5417\uFF1F"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1018,6 +1019,7 @@ MonoBehaviour:
   isUseful: 0
   isTalking: 0
   isShow: 0
+  outlineOBJ: {fileID: 0}
   control: {fileID: 0}
   _message: doit
   blockName: flow
@@ -1302,6 +1304,7 @@ MonoBehaviour:
   isUseful: 0
   isTalking: 0
   isShow: 1
+  outlineOBJ: {fileID: 0}
   CanRevert: 1
   key: 101
   activeAuto: 0
@@ -1518,7 +1521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 141927193}
+  selectedFlowchart: {fileID: 202279853}
 --- !u!4 &459564470
 Transform:
   m_ObjectHideFlags: 1
@@ -1737,6 +1740,7 @@ MonoBehaviour:
   isUseful: 0
   isTalking: 0
   isShow: 0
+  outlineOBJ: {fileID: 0}
   PD: {fileID: 523887085}
   useTimes: 1
   key: 101
@@ -2007,6 +2011,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 738443580}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &738443582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1425842997200330, guid: e54894f68f0698d4dbb930037d31e16e,
+    type: 3}
+  m_PrefabInstance: {fileID: 738443580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &738443583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738443582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.16509432, g: 0.8992975, b: 1, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 1
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &744233421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,6 +2326,7 @@ MonoBehaviour:
   isUseful: 0
   isTalking: 0
   isShow: 1
+  outlineOBJ: {fileID: 0}
 --- !u!65 &1281579702
 BoxCollider:
   m_ObjectHideFlags: 0

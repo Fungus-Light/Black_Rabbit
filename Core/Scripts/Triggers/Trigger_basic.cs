@@ -34,6 +34,9 @@ namespace Black_Rabbit
         public bool isTalking = false;
 
         public bool isShow = true;
+
+        public Outline outlineOBJ;
+
         // Start is called before the first frame update
         public virtual void Start()
         {
@@ -42,6 +45,10 @@ namespace Black_Rabbit
             isTalking = false;
             messagePos = transform.Find(PosName);
             _audio = GetComponent<AudioSource>();
+            if (outlineOBJ!=null)
+            {
+                outlineOBJ.HideOutLine();
+            }
         }
         protected virtual void OnTriggerEnter(Collider other)
         {
@@ -52,6 +59,10 @@ namespace Black_Rabbit
                     if (isShow)
                     {
                         UI.ShowMessage(_Name, _Message, messagePos);
+                        if (outlineOBJ != null)
+                        {
+                            outlineOBJ.ShowOutLine();
+                        }
                     }
                     isUseful = true;
                 }
@@ -67,6 +78,10 @@ namespace Black_Rabbit
                 {
                     UI.HideMessage();
                     isUseful = false;
+                    if (outlineOBJ!=null)
+                    {
+                        outlineOBJ.HideOutLine();
+                    }
                 }
             }
         }
